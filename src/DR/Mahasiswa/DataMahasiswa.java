@@ -21,8 +21,8 @@ public class DataMahasiswa {
         this.nomor = nomor;
     }
 
-    public void setmObject(String[][] mObject) {
-        this.mObject = mObject;
+    public void setObjPembacaData(String[][] objPembacaData) {
+        this.ObjPembacaData = objPembacaData;
     }
 
     public DataMahasiswa() {}
@@ -54,9 +54,7 @@ public class DataMahasiswa {
         return ukt;
     }
 
-    public void setUkt(long ukt) {
-        this.ukt = ukt;
-    }
+    public void setUkt(long ukt) {this.ukt = ukt;}
 
     // Method untuk menghitung usia berdasarkan tanggal lahir
     public String hitungUsia() {
@@ -92,16 +90,16 @@ public class DataMahasiswa {
         }
     }
 
-    private String[][] mObject;
+    private String[][] ObjPembacaData;
 
-    public String[][] getmObject() throws FileNotFoundException {
+    public String[][] getObjPembacaData() throws FileNotFoundException {
         this.readingData();
-        return mObject;
+        return ObjPembacaData;
     }
 
     //Membaca Data di TempStrArr menggunakan scanner
     public void readingData() throws FileNotFoundException {
-        File file = new File(System.getProperty("user.dir") + "/src/TempStrArr.txt");
+        File file = new File(System.getProperty("user.dir") + "/src/PseudoDB.txt");
         Scanner sc2 = new Scanner(file);
         Scanner sc = new Scanner(file);
 
@@ -121,7 +119,7 @@ public class DataMahasiswa {
             }
             startLoopMain++;
         }
-        this.mObject = StoDArray;
+        this.ObjPembacaData = StoDArray;
     }
 
 }
